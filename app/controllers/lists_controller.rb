@@ -30,7 +30,9 @@ class ListsController < ApplicationController
   def destroy
     list = List.find(params[:id])
     list.destroy
-    redirect_a
+    redirect_to '/lists'
+  end
+  
   private
   def list_params
     params.require(:list).permit(:title, :body, :image)
